@@ -1,0 +1,30 @@
+$bg-color: #efefef;
+
+$m-top: m-t !default
+$m-right: m-r !default
+$m-bottom: m-b !default
+$m-left: m-l !default
+
+@for $i from 1 through 50 {
+  .#{$m-top}-#{$i} {
+    margin-top:  #{$i}px
+  }
+}
+
+@for $i from 1 through 50 {
+  .#{$m-right}-#{$i} {
+    margin-right:  #{$i}px
+  }
+}
+
+@for $i from 1 through 50 {
+  .#{$m-bottom}-#{$i} {
+    margin-bottom:  #{$i}px
+  }
+}
+
+@for $i from 1 through 50 {
+  .#{$m-left}-#{$i} {
+    margin-left:  #{$i}px
+  }
+}

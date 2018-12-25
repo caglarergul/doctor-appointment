@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import { Icon, Table } from 'semantic-ui-react'
+import {Icon, Table, Button} from 'semantic-ui-react'
+
 class List extends Component {
     render() {
         return (
@@ -8,47 +9,133 @@ class List extends Component {
                 <Table celled striped>
                     <Table.Header>
                         <Table.Row>
-                            <Table.HeaderCell colSpan='3'>Git Repository</Table.HeaderCell>
+                            <Table.HeaderCell>#</Table.HeaderCell>
+                            <Table.HeaderCell>Customer Name</Table.HeaderCell>
+                            <Table.HeaderCell>Appointment Date</Table.HeaderCell>
+                            <Table.HeaderCell>Time</Table.HeaderCell>
+                            <Table.HeaderCell Width={"100px"}>Details</Table.HeaderCell>
                         </Table.Row>
                     </Table.Header>
 
                     <Table.Body>
                         <Table.Row>
                             <Table.Cell collapsing>
-                                <Icon name='folder' /> node_modules
+                                1
                             </Table.Cell>
-                            <Table.Cell>Initial commit</Table.Cell>
-                            <Table.Cell collapsing textAlign='right'>
-                                10 hours ago
+                            <Table.Cell>Çağlar ERGÜL</Table.Cell>
+                            <Table.Cell>
+                                25 December 2018
+                            </Table.Cell>
+                            <Table.Cell>12:00pm</Table.Cell>
+                            <Table.Cell>
+                                <Button icon labelPosition='right'>Show<Icon
+                                    name='right arrow'/></Button>
                             </Table.Cell>
                         </Table.Row>
+
                         <Table.Row>
-                            <Table.Cell>
-                                <Icon name='folder' /> test
+                            <Table.Cell collapsing>
+                                1
                             </Table.Cell>
-                            <Table.Cell>Initial commit</Table.Cell>
-                            <Table.Cell textAlign='right'>10 hours ago</Table.Cell>
+                            <Table.Cell>Çağlar ERGÜL</Table.Cell>
+                            <Table.Cell>
+                                25 December 2018
+                            </Table.Cell>
+                            <Table.Cell>12:00pm</Table.Cell>
+                            <Table.Cell>
+                                <Button icon labelPosition='right'>Show<Icon
+                                    name='right arrow'/></Button>
+                            </Table.Cell>
                         </Table.Row>
+
                         <Table.Row>
-                            <Table.Cell>
-                                <Icon name='folder' /> build
+                            <Table.Cell collapsing>
+                                1
                             </Table.Cell>
-                            <Table.Cell>Initial commit</Table.Cell>
-                            <Table.Cell textAlign='right'>10 hours ago</Table.Cell>
+                            <Table.Cell>Çağlar ERGÜL</Table.Cell>
+                            <Table.Cell>
+                                25 December 2018
+                            </Table.Cell>
+                            <Table.Cell>12:00pm</Table.Cell>
+                            <Table.Cell>
+                                <Button icon labelPosition='right'>Show<Icon
+                                    name='right arrow'/></Button>
+                            </Table.Cell>
                         </Table.Row>
+
                         <Table.Row>
-                            <Table.Cell>
-                                <Icon name='file outline' /> package.json
+                            <Table.Cell collapsing>
+                                1
                             </Table.Cell>
-                            <Table.Cell>Initial commit</Table.Cell>
-                            <Table.Cell textAlign='right'>10 hours ago</Table.Cell>
+                            <Table.Cell>Çağlar ERGÜL</Table.Cell>
+                            <Table.Cell>
+                                25 December 2018
+                            </Table.Cell>
+                            <Table.Cell>12:00pm</Table.Cell>
+                            <Table.Cell>
+                                <Button icon labelPosition='right'>Show<Icon
+                                    name='right arrow'/></Button>
+                            </Table.Cell>
                         </Table.Row>
+
                         <Table.Row>
-                            <Table.Cell>
-                                <Icon name='file outline' /> Gruntfile.js
+                            <Table.Cell collapsing>
+                                1
                             </Table.Cell>
-                            <Table.Cell>Initial commit</Table.Cell>
-                            <Table.Cell textAlign='right'>10 hours ago</Table.Cell>
+                            <Table.Cell>Çağlar ERGÜL</Table.Cell>
+                            <Table.Cell>
+                                25 December 2018
+                            </Table.Cell>
+                            <Table.Cell>12:00pm</Table.Cell>
+                            <Table.Cell>
+                                <Button icon labelPosition='right'>Show<Icon
+                                    name='right arrow'/></Button>
+                            </Table.Cell>
+                        </Table.Row>
+
+                        <Table.Row>
+                            <Table.Cell collapsing>
+                                1
+                            </Table.Cell>
+                            <Table.Cell>Çağlar ERGÜL</Table.Cell>
+                            <Table.Cell>
+                                25 December 2018
+                            </Table.Cell>
+                            <Table.Cell>12:00pm</Table.Cell>
+                            <Table.Cell>
+                                <Button icon labelPosition='right'>Show<Icon
+                                    name='right arrow'/></Button>
+                            </Table.Cell>
+                        </Table.Row>
+
+                        <Table.Row>
+                            <Table.Cell collapsing>
+                                1
+                            </Table.Cell>
+                            <Table.Cell>Çağlar ERGÜL</Table.Cell>
+                            <Table.Cell>
+                                25 December 2018
+                            </Table.Cell>
+                            <Table.Cell>12:00pm</Table.Cell>
+                            <Table.Cell>
+                                <Button icon labelPosition='right'>Show<Icon
+                                    name='right arrow'/></Button>
+                            </Table.Cell>
+                        </Table.Row>
+
+                        <Table.Row>
+                            <Table.Cell collapsing>
+                                1
+                            </Table.Cell>
+                            <Table.Cell>Çağlar ERGÜL</Table.Cell>
+                            <Table.Cell>
+                                25 December 2018
+                            </Table.Cell>
+                            <Table.Cell>12:00pm</Table.Cell>
+                            <Table.Cell>
+                                <Button icon labelPosition='right'>Show<Icon
+                                    name='right arrow'/></Button>
+                            </Table.Cell>
                         </Table.Row>
                     </Table.Body>
                 </Table>

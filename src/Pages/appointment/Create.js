@@ -3,9 +3,9 @@ import React, {Component} from 'react';
 class Create extends Component {
     render() {
         return (
-            <div>
-                Create
-            </div>
+            <h1>Create a Customer</h1>
+
+            
         );
     }
 }

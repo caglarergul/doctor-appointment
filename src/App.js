@@ -11,7 +11,7 @@ import ListCustomerComponent from './Pages/customer/ListCustomers';
 import Layout from './UI/Layout';
 import Aux from './HOC/Auxilary';
 import 'semantic-ui-css/semantic.min.css'
-import './App.css';
+import './sass/main.scss';
 
 class App extends Component {
     render() {

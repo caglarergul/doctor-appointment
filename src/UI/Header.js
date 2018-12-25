@@ -17,7 +17,10 @@ class Header extends Component {
                         DoctorSet
                     </NavLink>
                 </Menu.Item>
-
+                <NavLink active={activeItem === 'List'} className={"item"} to="/appointments/list">
+                    List
+                    Appointments
+                </NavLink>
                 <NavLink active={activeItem === 'Create'} className={"item"} to="/appointments/create">
                     Create
                     Appointment
