@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Icon, Table, Button} from 'semantic-ui-react'
 
-class List extends Component {
+class ListAppointment extends Component {
     render() {
         return (
             <div>
@@ -145,4 +145,4 @@ class List extends Component {
     }
 }
 
-export default List;
+export default ListAppointment;

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ListAppointments from './appointment/List'
+import ListAppointments from './appointment/ListAppointment'
 
 class HomeComponent extends Component {
     render() {

@@ -17,21 +17,21 @@ class Header extends Component {
                         DoctorSet
                     </NavLink>
                 </Menu.Item>
-                <NavLink active={activeItem === 'List'} className={"item"} to="/appointments/list">
+                <NavLink active={activeItem === 'ListAppointment'} className={"item"} to="/appointments/list">
                     List
                     Appointments
                 </NavLink>
-                <NavLink active={activeItem === 'Create'} className={"item"} to="/appointments/create">
+                <NavLink active={activeItem === 'CreateAppointment'} className={"item"} to="/appointments/create">
                     Create
                     Appointment
                 </NavLink>
 
-                <NavLink to="/appointments/delete" active={activeItem === 'Delete'} className={"item"}>
+                <NavLink to="/appointments/delete" active={activeItem === 'DeleteAppointment'} className={"item"}>
                     Delete
                     Appointment
                 </NavLink>
 
-                <NavLink to="/appointments/update" active={activeItem === 'Update'} className={"item"}>
+                <NavLink to="/appointments/update" active={activeItem === 'UpdateAppointment'} className={"item"}>
                     Update
                     Appointment
                 </NavLink>

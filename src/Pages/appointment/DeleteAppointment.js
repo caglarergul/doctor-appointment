@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class Delete extends Component {
+class DeleteAppointment extends Component {
     render() {
         return (
             <div>
@@ -10,4 +10,4 @@ class Delete extends Component {
     }
 }
 
-export default Delete;
+export default DeleteAppointment;

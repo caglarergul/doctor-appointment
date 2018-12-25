@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import HomeComponent from './Pages/Home';
-import ListComponent from './Pages/appointment/List';
-import CreateComponent from './Pages/appointment/Create';
-import UpdateComponent from './Pages/appointment/Update';
-import DeleteComponent from './Pages/appointment/Delete';
+import ListComponent from './Pages/appointment/ListAppointment';
+import CreateComponent from './Pages/appointment/CreateAppointment';
+import UpdateComponent from './Pages/appointment/UpdateAppointment';
+import DeleteComponent from './Pages/appointment/DeleteAppointment';
 import CreateCustomerComponent from './Pages/customer/CreateCustomer';
 import UpdateCustomerComponent from './Pages/customer/UpdateCustomer';
 import ListCustomerComponent from './Pages/customer/ListCustomers';
