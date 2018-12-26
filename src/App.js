@@ -9,7 +9,7 @@ import CreateCustomerComponent from './Pages/customer/CreateCustomer';
 import UpdateCustomerComponent from './Pages/customer/UpdateCustomer';
 import ListCustomerComponent from './Pages/customer/ListCustomers';
 import Layout from './UI/Layout';
-import Aux from './HOC/Auxilary';
+import Aux from './Shared/Auxilary';
 import 'semantic-ui-css/semantic.min.css'
 import './sass/main.scss';
 

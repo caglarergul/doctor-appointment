@@ -13,7 +13,7 @@ class ListAppointment extends Component {
                             <Table.HeaderCell>Customer Name</Table.HeaderCell>
                             <Table.HeaderCell>Appointment Date</Table.HeaderCell>
                             <Table.HeaderCell>Time</Table.HeaderCell>
-                            <Table.HeaderCell Width={"100px"}>Details</Table.HeaderCell>
+                            <Table.HeaderCell widths={"100px"}>Details</Table.HeaderCell>
                         </Table.Row>
                     </Table.Header>
 
