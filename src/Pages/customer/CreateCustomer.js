@@ -56,7 +56,7 @@ class CreateCustomer extends Component {
             appointmentCredit: this.state.appointmentCredit,
             note: this.state.note,
             paymentDid: this.state.paymentDid,
-            paymentLeft: this.state.paymentLeft
+            paymentLeft: this.state.totalPayment
         };
 
         this.sendPostRequest(customerObject);

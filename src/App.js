@@ -8,6 +8,7 @@ import DeleteComponent from './Pages/appointment/DeleteAppointment';
 import CreateCustomerComponent from './Pages/customer/CreateCustomer';
 import UpdateCustomerComponent from './Pages/customer/UpdateCustomer';
 import ListCustomerComponent from './Pages/customer/ListCustomers';
+import CustomerDetailsComponent from './Pages/customer/CustomerDetails';
 import Layout from './UI/Layout';
 import Aux from './Shared/Auxilary';
 import 'semantic-ui-css/semantic.min.css'
@@ -30,6 +31,7 @@ class App extends Component {
                             <Route path="/customer/update"  exact component={UpdateCustomerComponent}/>
                             <Route path="/customer/list"  exact component={ListCustomerComponent}/>
                             <Route path="/customer/update/:id"  exact component={UpdateCustomerComponent}/>
+                            <Route path="/customer/:id"  exact component={CustomerDetailsComponent}/>
                         </Switch>
                     </Layout>
                 </Aux>
