@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import api from '../../Shared/ApiConnect';
-import {Button, Confirm, Form, Input, Select, TextArea, Dimmer, Header, Icon} from "semantic-ui-react";
+import {Button, Confirm, Form, Input, Select, TextArea, Dimmer, Header, Icon, Segment} from "semantic-ui-react";
 
 
 const options = [
@@ -78,9 +78,9 @@ class CreateCustomer extends Component {
         })
     };
 
-    handleOpen = () => this.setState({ active: true });
+    handleOpen = () => this.setState({active: true});
     handleClose = () => {
-        this.setState({ active: false });
+        this.setState({active: false});
         window.location.reload();
     };
 
@@ -90,58 +90,60 @@ class CreateCustomer extends Component {
         return (
             <div>
                 <h1>Add a Customer</h1>
-                <Form>
-                    <Form.Group widths='equal'>
-                        <Form.Field control={Input} label='First name' value={this.state.firstName} name="firstName"
-                                    onChange={this.handleChange} placeholder='First name'/>
-                        <Form.Field control={Input} label='Last name' value={this.state.lastName} name="lastName"
-                                    onChange={this.handleChange} placeholder='Last name'/>
-                        <Form.Field control={Select} label='Gender' options={options} selectionvalue={value}
-                                    onChange={this.handleChangeGender} name="gender" placeholder='Gender'/>
+                <Segment raised>
+                    <Form>
+                        <Form.Group widths='equal'>
+                            <Form.Field control={Input} label='First name' value={this.state.firstName} name="firstName"
+                                        onChange={this.handleChange} placeholder='First name'/>
+                            <Form.Field control={Input} label='Last name' value={this.state.lastName} name="lastName"
+                                        onChange={this.handleChange} placeholder='Last name'/>
+                            <Form.Field control={Select} label='Gender' options={options} selectionvalue={value}
+                                        onChange={this.handleChangeGender} name="gender" placeholder='Gender'/>
 
 
-                    </Form.Group>
-                    <Form.Group widths='equal'>
-                        <Form.Field control={Input} label='Phone' value={this.state.phone} name="phone"
-                                    onChange={this.handleChange} placeholder='0XXX XXX XX XX'/>
-                        <Form.Field control={Input} label='E-mail' value={this.state.email} name="email"
-                                    onChange={this.handleChange} placeholder=''/>
+                        </Form.Group>
+                        <Form.Group widths='equal'>
+                            <Form.Field control={Input} label='Phone' value={this.state.phone} name="phone"
+                                        onChange={this.handleChange} placeholder='0XXX XXX XX XX'/>
+                            <Form.Field control={Input} label='E-mail' value={this.state.email} name="email"
+                                        onChange={this.handleChange} placeholder=''/>
 
-                    </Form.Group>
-                    <Form.Group widths='equal'>
-                        <Form.Field control={Input} label='Start Weight (kg)' value={this.state.startWeight}
-                                    name="startWeight" onChange={this.handleChange} placeholder='65'/>
-                        <Form.Field control={Input} label='Height (cm)' value={this.state.height} name="height"
-                                    onChange={this.handleChange} placeholder='180'/>
-                    </Form.Group>
+                        </Form.Group>
+                        <Form.Group widths='equal'>
+                            <Form.Field control={Input} label='Start Weight (kg)' value={this.state.startWeight}
+                                        name="startWeight" onChange={this.handleChange} placeholder='65'/>
+                            <Form.Field control={Input} label='Height (cm)' value={this.state.height} name="height"
+                                        onChange={this.handleChange} placeholder='180'/>
+                        </Form.Group>
 
-                    <Form.Group widths='equal'>
-                        <Form.Field control={Input} label='Total Payment (₺)' value={this.state.totalPayment}
-                                    name="totalPayment" onChange={this.handleChange} placeholder='500'/>
-                        <Form.Field control={Input} label='Appointment Credit (Day)'
-                                    value={this.state.appointmentCredit} name="appointmentCredit"
-                                    onChange={this.handleChange} placeholder='4'/>
-                    </Form.Group>
+                        <Form.Group widths='equal'>
+                            <Form.Field control={Input} label='Total Payment (₺)' value={this.state.totalPayment}
+                                        name="totalPayment" onChange={this.handleChange} placeholder='500'/>
+                            <Form.Field control={Input} label='Appointment Credit (Day)'
+                                        value={this.state.appointmentCredit} name="appointmentCredit"
+                                        onChange={this.handleChange} placeholder='4'/>
+                        </Form.Group>
 
-                    <Form.Field control={TextArea} label='Note' value={this.state.note} name="note"
-                                onChange={this.handleChange} placeholder='Tell about the customer...'/>
-                    <Button.Group>
-                        <Button type="reset">Reset</Button>
-                        <Button.Or/>
-                        <Button type="submit" onClick={this.show} positive>Create</Button>
-                    </Button.Group>
-                </Form>
+                        <Form.Field control={TextArea} label='Note' value={this.state.note} name="note"
+                                    onChange={this.handleChange} placeholder='Tell about the customer...'/>
+                        <Button.Group>
+                            <Button type="reset">Reset</Button>
+                            <Button.Or/>
+                            <Button type="submit" onClick={this.show} positive>Create</Button>
+                        </Button.Group>
+                    </Form>
 
-                <Confirm open={open} onCancel={this.handleCancel} onConfirm={this.handleConfirm}/>
+                    <Confirm open={open} onCancel={this.handleCancel} onConfirm={this.handleConfirm}/>
 
 
-                <Dimmer blurring active={active} onClickOutside={this.handleClose} page>
-                    <Header as='h2' icon inverted>
-                        <Icon name='check' />
-                        Successfull!
-                        <Header.Subheader>Operation is successful.</Header.Subheader>
-                    </Header>
-                </Dimmer>
+                    <Dimmer blurring active={active} onClickOutside={this.handleClose} page>
+                        <Header as='h2' icon inverted>
+                            <Icon name='check'/>
+                            Successfull!
+                            <Header.Subheader>Operation is successful.</Header.Subheader>
+                        </Header>
+                    </Dimmer>
+                </Segment>
             </div>
 
 

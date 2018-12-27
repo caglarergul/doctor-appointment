@@ -21,7 +21,7 @@ const customerPartial = (props) => (
             {props.paymentLeft}
         </Table.Cell>
         <Table.Cell collapsing>
-            <NavLink className={"ui icon compact blue right labeled button"} to={"customer/" + props.id}>
+            <NavLink className={"ui icon compact blue right labeled button"} to={"/customer/" + props.id}>
                 Show <i aria-hidden="true" className="right arrow icon">&nbsp;</i>
             </NavLink>
         </Table.Cell>

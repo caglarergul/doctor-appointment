@@ -7,24 +7,24 @@ $m-left: m-l !default
 
 @for $i from 1 through 50 {
   .#{$m-top}-#{$i} {
-    margin-top:  #{$i}px
+    margin-top:  #{$i}px !important;
   }
 }
 
 @for $i from 1 through 50 {
   .#{$m-right}-#{$i} {
-    margin-right:  #{$i}px
+    margin-right:  #{$i}px !important;
   }
 }
 
 @for $i from 1 through 50 {
   .#{$m-bottom}-#{$i} {
-    margin-bottom:  #{$i}px
+    margin-bottom:  #{$i}px !important;
   }
 }
 
 @for $i from 1 through 50 {
   .#{$m-left}-#{$i} {
-    margin-left:  #{$i}px
+    margin-left:  #{$i}px !important;
   }
 }
