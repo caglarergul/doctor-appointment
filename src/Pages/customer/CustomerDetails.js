@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import api from '../../Shared/ApiConnect';
-import {Label, Grid, Segment, Table, Icon, Form, Button} from "semantic-ui-react";
+import {Label, Header, Grid, Segment, Table, Icon, Form, Button, Input, Dimmer} from "semantic-ui-react";
 import {NavLink} from 'react-router-dom';
 
 class CustomerDetails extends Component {
@@ -20,6 +20,7 @@ class CustomerDetails extends Component {
 
     handleChange(event) {
         this.setState({[event.target.name]: event.target.value});
+        // console.log(event.target.value)
     }
 
     addPaymentHandler = () => {
@@ -29,9 +30,18 @@ class CustomerDetails extends Component {
 
 
     handleSubmit() {
-        api.post("customer/"+this.state.customerId, ).then(response => {
-            console.log(response.data);
-        })
+        const updatedCustomerData = {
+            ...this.state.customerData
+        };
+
+        updatedCustomerData.paymentDid =  parseInt(updatedCustomerData.paymentDid) + parseInt(this.state.addPayment);
+        updatedCustomerData.paymentLeft = parseInt(updatedCustomerData.totalPayment - updatedCustomerData.paymentDid);
+
+        // console.log(updatedCustomerData);
+         api.put("customer/"+this.state.customerId, updatedCustomerData).then(response => {
+             console.log(response.data);
+             this.handleOpen();
+         })
 
 
     }
@@ -51,22 +61,27 @@ class CustomerDetails extends Component {
     getAllDetailsFromCustomer = (CustomerID) => {
         api.get('customer/' + CustomerID).then(response => {
             const updatedCustomerData = response.data;
-            console.log(updatedCustomerData);
+           // console.log(updatedCustomerData);
             this.setState({customerData: updatedCustomerData});
             const FullName = updatedCustomerData.firstName + " " + updatedCustomerData.lastName;
             this.setState({customerFullName: FullName});
         });
-        console.log("ID:");
-        console.log(this.state.customerId);
-        console.log("State:");
-        console.log(this.state.customerId);
+        // console.log("ID:");
+        // console.log(this.state.customerId);
+        // console.log("State:");
+        // console.log(this.state.customerId);
     };
-
+    handleOpen = () => this.setState({active: true});
+    handleClose = () => {
+        this.setState({active: false});
+        window.location.reload();
+    };
     componentWillMount() {
         this.getAllDetailsFromCustomer(this.state.customerId);
     }
 
     render() {
+        const {open, active} = this.state;
         return (
             <div>
                 <Grid>
@@ -91,7 +106,7 @@ class CustomerDetails extends Component {
                                         </Table.Row>
                                         <Table.Row>
                                             <Table.Cell><Label color='grey' horizontal>Gender</Label></Table.Cell>
-                                            <Table.Cell>{this.state.customerData.firstName}</Table.Cell>
+                                            <Table.Cell>{this.state.customerData.gender}</Table.Cell>
                                         </Table.Row>
                                         <Table.Row>
                                             <Table.Cell><Label color='grey' horizontal>E-Mail</Label></Table.Cell>
@@ -196,21 +211,19 @@ class CustomerDetails extends Component {
                                     <NavLink className={"ui button tiny orange"}
                                              to={"/customer/update/" + this.state.customerId}><Icon
                                         name='refresh'/> Update Information</NavLink>
-                                    <a className={"ui button green tiny"} onClick={this.showHideAddPayment}><Icon
-                                        name='payment'/> Add Payment</a>
+                                    <button className={"ui button green tiny"} onClick={this.showHideAddPayment}><Icon
+                                        name='payment'/> Add Payment</button>
                                     <NavLink className={"ui button blue tiny"}
                                              to={"/customer/update/" + this.state.customerId}><Icon name='male'/>Set
                                         Appointment</NavLink>
                                 </div>
                                 <div className={"add-payment m-t-28"} hidden={this.state.paymentShow}>
                                     <Form>
-                                        <Form.Field>
-                                            <label>How much did your customer pay?</label>
-                                            <input placeholder='100' value={this.state.paymentValue}/>
-                                        </Form.Field>
 
+                                        <Form.Field control={Input} label='How much did your customer pay?' value={this.state.addPayment}
+                                                    name="addPayment" onChange={this.handleChange} placeholder='100'/>
 
-                                        <Button compact color='green' name={"addPayment"} value={this.state.addPayment} onClick={this.addPaymentHandler} inverted>Add</Button>
+                                        <Button compact color='green' name={"addPayment"}  onClick={this.addPaymentHandler} inverted>Add</Button>
                                     </Form>
                                 </div>
                             </Segment>
@@ -218,7 +231,13 @@ class CustomerDetails extends Component {
                     </Grid.Row>
                 </Grid>
 
-
+                <Dimmer blurring active={active} onClickOutside={this.handleClose} page>
+                    <Header as='h2' icon inverted>
+                        <Icon name='check'/>
+                        Successfull!
+                        <Header.Subheader>Operation is successful.</Header.Subheader>
+                    </Header>
+                </Dimmer>
             </div>
         );
     }

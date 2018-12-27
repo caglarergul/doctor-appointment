@@ -49,14 +49,14 @@ class CreateCustomer extends Component {
             gender: this.state.gender,
             phone: this.state.phone,
             email: this.state.email,
-            currentWeight: this.state.startWeight,
-            startWeight: this.state.startWeight,
-            height: this.state.height,
-            totalPayment: this.state.totalPayment,
+            currentWeight: parseInt(this.state.startWeight),
+            startWeight: parseInt(this.state.startWeight),
+            height: parseInt(this.state.height),
+            totalPayment: parseInt(this.state.totalPayment),
             appointmentCredit: this.state.appointmentCredit,
             note: this.state.note,
-            paymentDid: this.state.paymentDid,
-            paymentLeft: this.state.totalPayment
+            paymentDid: 0,
+            paymentLeft: parseInt(this.state.totalPayment)
         };
 
         this.sendPostRequest(customerObject);
