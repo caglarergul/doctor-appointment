@@ -27,7 +27,8 @@ class CreateCustomer extends Component {
             appointmentCredit: "",
             note: "",
             paymentDid: "",
-            paymentLeft: ""
+            paymentLeft: "",
+            birthYear: ""
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -56,7 +57,8 @@ class CreateCustomer extends Component {
             appointmentCredit: this.state.appointmentCredit,
             note: this.state.note,
             paymentDid: 0,
-            paymentLeft: parseInt(this.state.totalPayment)
+            paymentLeft: parseInt(this.state.totalPayment),
+            birthYear: this.state.birthYear
         };
 
         this.sendPostRequest(customerObject);
@@ -107,6 +109,8 @@ class CreateCustomer extends Component {
                                         onChange={this.handleChange} placeholder='0XXX XXX XX XX'/>
                             <Form.Field control={Input} label='E-mail' value={this.state.email} name="email"
                                         onChange={this.handleChange} placeholder=''/>
+                            <Form.Field control={Input} label='Birth Year' value={this.state.birthYear} name="birthYear"
+                                        onChange={this.handleChange} placeholder='1990'/>
 
                         </Form.Group>
                         <Form.Group widths='equal'>

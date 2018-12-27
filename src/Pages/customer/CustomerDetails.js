@@ -81,7 +81,8 @@ class CustomerDetails extends Component {
     }
 
     render() {
-        const {open, active} = this.state;
+        const {active} = this.state;
+        const age = (new Date()).getFullYear() - parseInt(this.state.customerData.birthYear);
         return (
             <div>
                 <Grid>
@@ -111,6 +112,10 @@ class CustomerDetails extends Component {
                                         <Table.Row>
                                             <Table.Cell><Label color='grey' horizontal>E-Mail</Label></Table.Cell>
                                             <Table.Cell>{this.state.customerData.email}</Table.Cell>
+                                        </Table.Row>
+                                        <Table.Row>
+                                            <Table.Cell><Label color='grey' horizontal>Age</Label></Table.Cell>
+                                            <Table.Cell>{age}</Table.Cell>
                                         </Table.Row>
                                         <Table.Row>
                                             <Table.Cell><Label color='grey' horizontal>Phone</Label></Table.Cell>
