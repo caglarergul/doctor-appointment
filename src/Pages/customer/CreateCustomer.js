@@ -44,6 +44,7 @@ class CreateCustomer extends Component {
     };
 
     handleSubmit() {
+
         const customerObject = {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
@@ -60,7 +61,7 @@ class CreateCustomer extends Component {
             paymentLeft: parseInt(this.state.totalPayment),
             birthYear: this.state.birthYear
         };
-
+        
         this.sendPostRequest(customerObject);
     }
 
@@ -68,8 +69,9 @@ class CreateCustomer extends Component {
 
     handleConfirm = () => {
         this.setState({result: 'confirmed', open: false});
+
         this.handleSubmit();
-        this.handleOpen();
+       this.handleOpen();
     };
 
     handleCancel = () => this.setState({result: 'cancelled', open: false})
@@ -139,7 +141,7 @@ class CreateCustomer extends Component {
                     <Confirm open={open} onCancel={this.handleCancel} onConfirm={this.handleConfirm}/>
 
 
-                    <Dimmer blurring active={active} onClickOutside={this.handleClose} page>
+                    <Dimmer active={active} onClickOutside={this.handleClose} page>
                         <Header as='h2' icon inverted>
                             <Icon name='check'/>
                             Successfull!
