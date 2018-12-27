@@ -49,7 +49,7 @@ class CreateCustomer extends Component {
             gender: this.state.gender,
             phone: this.state.phone,
             email: this.state.email,
-            currentWeight: this.state.currentWeight,
+            currentWeight: this.state.startWeight,
             startWeight: this.state.startWeight,
             height: this.state.height,
             totalPayment: this.state.totalPayment,
@@ -132,7 +132,6 @@ class CreateCustomer extends Component {
                             <Button type="submit" onClick={this.show} positive>Create</Button>
                         </Button.Group>
                     </Form>
-
                     <Confirm open={open} onCancel={this.handleCancel} onConfirm={this.handleConfirm}/>
 
 
