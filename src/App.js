@@ -25,6 +25,7 @@ class App extends Component {
                             <Route path="/"  exact component={HomeComponent}/>
                             <Route path="/appointments/list" exact component={ListComponent}/>
                             <Route path="/appointments/create"  exact component={CreateComponent}/>
+                            <Route path="/appointments/create/:id"  exact component={CreateComponent}/>
                             <Route path="/appointments/update"  exact component={UpdateComponent}/>
                             <Route path="/appointments/delete" exact  component={DeleteComponent}/>
                             <Route path="/customer/create"  exact component={CreateCustomerComponent}/>

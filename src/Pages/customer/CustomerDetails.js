@@ -219,7 +219,7 @@ class CustomerDetails extends Component {
                                     <button className={"ui button green tiny"} onClick={this.showHideAddPayment}><Icon
                                         name='payment'/> Add Payment</button>
                                     <NavLink className={"ui button blue tiny"}
-                                             to={"/customer/update/" + this.state.customerId}><Icon name='male'/>Set
+                                             to={"/appointments/create/:" + this.state.customerId}><Icon name='male'/>Set
                                         Appointment</NavLink>
                                 </div>
                                 <div className={"add-payment m-t-28"} hidden={this.state.paymentShow}>

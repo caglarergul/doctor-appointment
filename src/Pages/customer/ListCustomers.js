@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Table} from "semantic-ui-react";
 import api from '../../Shared/ApiConnect';
-import CustomerPartial from "./Partials/CustomerPartial";
+import CustomerDetails from "./Partials/_CustomerDetails";
 
 class ListCustomers extends Component {
     state = {
@@ -29,9 +29,9 @@ class ListCustomers extends Component {
     render() {
 
         let customers = this.state.customerList.map(customer => {
-            return <CustomerPartial key={customer._id} id={customer._id} firstName={customer.firstName}
-                                    lastName={customer.lastName} gender={customer.gender}
-                                    totalPayment={customer.totalPayment} paymentLeft={customer.paymentLeft}/>;
+            return <CustomerDetails key={customer._id} id={customer._id} firstName={customer.firstName}
+                                     lastName={customer.lastName} gender={customer.gender}
+                                     totalPayment={customer.totalPayment} updateButtonHidden={true} paymentLeft={customer.paymentLeft}/>;
         });
 
         return (
