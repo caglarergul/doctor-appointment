@@ -90,7 +90,7 @@ class UpdateCustomer extends Component {
             this.setState({paymentLeft: response.data.paymentLeft});
             this.setState({birthYear: response.data.birthYear});
             this.setState({appointmentCredit: response.data.appointmentCredit});
-
+                console.log(this.state.gender)
         }).catch(error => {
             // handle error
             console.log(error);
@@ -140,7 +140,7 @@ class UpdateCustomer extends Component {
     };
 
     render() {
-        const {value, open, active} = this.state;
+        const {open, active} = this.state;
 
 
         return (
@@ -160,7 +160,7 @@ class UpdateCustomer extends Component {
                                     <Form.Field control={Input} label='Last name'
                                                 value={this.state.lastName} name="lastName"
                                                 onChange={this.handleChange}/>
-                                    <Form.Field control={Select} label='Gender' options={options} selectionvalue={value}
+                                    <Form.Field control={Select} label='Gender' options={options} value={this.state.gender} selectionvalue={this.state.gender}
                                                 onChange={this.handleChangeGender} name="gender"/>
 
 

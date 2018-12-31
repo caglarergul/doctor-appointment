@@ -140,12 +140,12 @@ class CustomerDetails extends Component {
                                     <Table.Body>
                                         <Table.Row>
 
-                                            <Table.Cell><Label color='green' horizontal>Start
+                                            <Table.Cell><Label color='grey' horizontal>Start
                                                 Weight</Label></Table.Cell>
                                             <Table.Cell>{this.state.customerData.startWeight} kg</Table.Cell>
                                         </Table.Row>
                                         <Table.Row>
-                                            <Table.Cell collapsing><Label color='green' horizontal>Current
+                                            <Table.Cell collapsing><Label color='grey' horizontal>Current
                                                 Weight</Label></Table.Cell>
                                             <Table.Cell>{this.state.customerData.currentWeight} kg</Table.Cell>
                                         </Table.Row>
@@ -155,7 +155,7 @@ class CustomerDetails extends Component {
                                             <Table.Cell>{this.state.customerData.startWeight - this.state.customerData.currentWeight} kg</Table.Cell>
                                         </Table.Row>
                                         <Table.Row>
-                                            <Table.Cell><Label color='green' horizontal>Height</Label></Table.Cell>
+                                            <Table.Cell><Label color='grey' horizontal>Height</Label></Table.Cell>
                                             <Table.Cell>{this.state.customerData.height} cm</Table.Cell>
                                         </Table.Row>
 
@@ -181,12 +181,12 @@ class CustomerDetails extends Component {
                                     <Table.Body>
                                         <Table.Row>
 
-                                            <Table.Cell><Label color='green' horizontal>Total
+                                            <Table.Cell><Label color='grey' horizontal>Total
                                                 Payment</Label></Table.Cell>
                                             <Table.Cell>{this.state.customerData.totalPayment} ₺</Table.Cell>
                                         </Table.Row>
                                         <Table.Row>
-                                            <Table.Cell><Label color='green' horizontal>Payment
+                                            <Table.Cell><Label color='red' horizontal>Payment
                                                 Left</Label></Table.Cell>
                                             <Table.Cell>{this.state.customerData.paymentLeft} ₺</Table.Cell>
                                         </Table.Row>
@@ -196,12 +196,12 @@ class CustomerDetails extends Component {
                                         </Table.Row>
 
                                         <Table.Row>
-                                            <Table.Cell collapsing><Label color='green' horizontal>Appointment
+                                            <Table.Cell collapsing><Label color='grey' horizontal>Appointment
                                                 Credit</Label></Table.Cell>
                                             <Table.Cell>{this.state.customerData.appointmentCredit} days</Table.Cell>
                                         </Table.Row>
                                         <Table.Row>
-                                            <Table.Cell collapsing><Label color='green'
+                                            <Table.Cell collapsing><Label color='grey'
                                                                           horizontal>Notes</Label></Table.Cell>
                                             <Table.Cell>{this.state.customerData.note}</Table.Cell>
                                         </Table.Row>
