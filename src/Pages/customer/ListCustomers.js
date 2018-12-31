@@ -33,13 +33,13 @@ class ListCustomers extends Component {
         let customers = this.state.customerList.map(customer => {
             return <CustomerDetails key={customer._id} id={customer._id} firstName={customer.firstName}
                                      lastName={customer.lastName} gender={customer.gender}
-                                     totalPayment={customer.totalPayment} updateButtonHidden={true} paymentLeft={customer.paymentLeft}/>;
+                                     totalPayment={customer.totalPayment} appointmentCredit={customer.appointmentCredit} updateButtonHidden={true} paymentLeft={customer.paymentLeft}/>;
         });
 
         return (
             <div>
                 <h1 className={"ui ui-header"}>List All Customers</h1>
-                <Table celled striped>
+                <Table celled striped color={'blue'}  compact='very'>
                     <Table.Header>
                         <Table.Row>
                             <Table.HeaderCell>First name</Table.HeaderCell>
@@ -47,6 +47,7 @@ class ListCustomers extends Component {
                             <Table.HeaderCell>Gender</Table.HeaderCell>
                             <Table.HeaderCell>Total Payment</Table.HeaderCell>
                             <Table.HeaderCell>Payment Left</Table.HeaderCell>
+                            <Table.HeaderCell  collapsing>Appointment Credit</Table.HeaderCell>
                             <Table.HeaderCell collapsing>Details</Table.HeaderCell>
                         </Table.Row>
                     </Table.Header>

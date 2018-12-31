@@ -25,15 +25,18 @@ class _CustomerDetails extends Component {
                     {this.props.paymentLeft}
                 </Table.Cell>
                 <Table.Cell>
+                    {this.props.appointmentCredit}
+                </Table.Cell>
+                <Table.Cell collapsing>
+
+
+
+                    <NavLink className={"ui icon  orange right  tiny button"} to={"/customer/update/" + this.props.id}>
+                        <i aria-hidden="true" className="right refresh icon">&nbsp;</i>
+                    </NavLink>
                     <NavLink className={"ui icon  blue right tiny  button m-b-5"} to={"/customer/" + this.props.id}>
-                            <i aria-hidden="true" className="right arrow icon">&nbsp;</i>
-                        </NavLink>
-
-
-                        <NavLink className={"ui icon  orange right  tiny button"}  to={"/customer/update/" + this.props.id}>
-                            <i aria-hidden="true" className="right refresh icon">&nbsp;</i>
-                        </NavLink>
-
+                        <i aria-hidden="true" className="right arrow icon">&nbsp;</i>
+                    </NavLink>
                 </Table.Cell>
             </Table.Row>
 
