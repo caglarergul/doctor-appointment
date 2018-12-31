@@ -31,11 +31,11 @@ class _CustomerDetails extends Component {
                         </NavLink>
                     </div>
                     <div  style={{'float':'left'}} hidden={this.props.updateButtonHidden}>
-                        <NavLink className={"ui icon  orange right  tiny button"}
+                        <a className={"ui icon  orange right  tiny button"}
                                  onClick={() => this.props.updateClick()}
-                                 to={"/customer/update/" + this.props.id}>
+                                 >
                             <i aria-hidden="true" className="right refresh icon">&nbsp;</i>
-                        </NavLink>
+                        </a>
                     </div>
                 </Table.Cell>
             </Table.Row>
