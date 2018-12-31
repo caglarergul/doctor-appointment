@@ -22,6 +22,8 @@ class ListCustomers extends Component {
     };
 
     componentDidMount() {
+
+
         this.getAllCustomers()
 
     }

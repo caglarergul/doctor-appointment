@@ -44,9 +44,7 @@ class Header extends Component {
                     </NavLink>
 
 
-                    <NavLink to="/customer/update"  className={"item"}>
-                        Update Customer
-                    </NavLink>
+
                 </Menu.Menu>
             </Menu>
         );
