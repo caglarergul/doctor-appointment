@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {Button} from 'semantic-ui-react';
+import {Button, Icon} from 'semantic-ui-react';
 class DateTimeButton extends Component {
     render() {
         return (
-            <Button
-                secondary
+            <Button icon labelPosition='left'
+                color={'teal'}
                 onClick={this.props.onClick}>
+                <Icon name='calendar' />
                 {this.props.value}
             </Button>
         );

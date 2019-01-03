@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Table} from "semantic-ui-react";
+import {Segment, Table} from "semantic-ui-react";
 import api from '../../Shared/ApiConnect';
 import CustomerDetails from "./Partials/_CustomerDetails";
 
@@ -39,6 +39,7 @@ class ListCustomers extends Component {
         return (
             <div>
                 <h1 className={"ui ui-header"}>List All Customers</h1>
+                <Segment padded>
                 <Table celled striped color={'blue'}  compact='very'>
                     <Table.Header>
                         <Table.Row>
@@ -56,6 +57,7 @@ class ListCustomers extends Component {
                         {customers}
                     </Table.Body>
                 </Table>
+                </Segment>
             </div>
 
         );
