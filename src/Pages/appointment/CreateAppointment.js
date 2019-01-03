@@ -13,9 +13,13 @@ class CreateAppointment extends Component {
             startDate: new Date(),
             customerList: [],
             relatedCustomerId: '',
-            notes: ''
+            relatedCustomerFullName:'',
+            notes: '',
+            customerData: []
+
         };
         this.handleChangeDate = this.handleChangeDate.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     handleChangeDate(date) {
@@ -45,39 +49,39 @@ class CreateAppointment extends Component {
     }
 
     handleChangeCustomer = (e, {value}) => {
-        this.setState({relatedCustomerId: value})
+        this.setState({relatedCustomerId: value});
+        api.get('customer/' + value).then(response => {
+            this.setState({customerData: response.data});
+            this.setState({relatedCustomerFullName: response.data.firstName + ' ' + response.data.lastName});
+            console.log(this.state.customerData);
+        });
+
     };
 
     handleSubmit() {
-        
+
         const appointmentObject = {
             relatedCustomerId: this.state.relatedCustomerId,
             notes: this.state.notes,
-            date: this.state.startDate
+            date: this.state.startDate,
+            relatedCustomerFullName: this.state.relatedCustomerFullName
         };
 
         this.sendPostRequest(appointmentObject);
         this.updateCustomerAppointmentCount();
     }
 
-    getSelectedCustomer = (id) => {
-        
-        let customerData = [];
-        api.get('customer/' + id).then(response => {
-            customerData = response.data
-
-        });
-
-        return customerData;
-
-    };
 
     updateCustomerAppointmentCount = () => {
-        
-        let userData = this.getSelectedCustomer(this.state.relatedCustomerId);
-        userData.appointmentCount = (userData.appointmentCount - 1);
-        api.put('customer/' + this.state.relatedCustomerId, userData).then(response => {
-            console.log(response.data);
+        let newAppointmentCredit = parseInt(this.state.customerData.appointmentCredit);
+        newAppointmentCredit = newAppointmentCredit - 1;
+
+        const updatedCustomerDataArray = this.state.customerData;
+        updatedCustomerDataArray.appointmentCredit = newAppointmentCredit.toString();
+
+        api.put('customer/' + this.state.relatedCustomerId, updatedCustomerDataArray).then(response => {
+
+            console.log("customer appointment count is updated: \n" + response.data.toString());
         })
     };
 
@@ -89,7 +93,7 @@ class CreateAppointment extends Component {
         this.handleOpen();
     };
 
-    handleCancel = () => this.setState({result: 'cancelled', open: false})
+    handleCancel = () => this.setState({result: 'cancelled', open: false});
 
     sendPostRequest = (data) => {
         api.post("appointment", data).then(response => {
@@ -100,7 +104,7 @@ class CreateAppointment extends Component {
     handleOpen = () => this.setState({active: true});
     handleClose = () => {
         this.setState({active: false});
-       // window.location.reload();
+        window.location.reload();
     };
 
     render() {
@@ -131,7 +135,7 @@ class CreateAppointment extends Component {
                                         placeholder='Select Customer' onChange={this.handleChangeCustomer}/>
                         </Form.Group>
 
-                        <Form.Field control={TextArea} label='Note' placeholder='Tell us more about the appointment'/>
+                        <Form.Field control={TextArea} name={"notes"} onChange={this.handleChange} label='Note' placeholder='Tell us more about the appointment'/>
 
                         <Button.Group position='right'>
                             <Button>Reset</Button>

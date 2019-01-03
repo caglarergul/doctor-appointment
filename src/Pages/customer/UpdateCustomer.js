@@ -100,7 +100,6 @@ class UpdateCustomer extends Component {
 
 
     componentDidMount() {
-
         if (this.props.match.params.id) {
             this.setState({customerId: this.props.match.params.id});
             this.getCustomer(this.props.match.params.id);
@@ -117,7 +116,6 @@ class UpdateCustomer extends Component {
 
     handleConfirm = () => {
         this.setState({result: 'confirmed', open: false});
-
         this.handleSubmit();
         this.handleOpen();
     };
