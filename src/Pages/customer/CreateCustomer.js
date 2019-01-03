@@ -69,9 +69,8 @@ class CreateCustomer extends Component {
 
     handleConfirm = () => {
         this.setState({result: 'confirmed', open: false});
-
         this.handleSubmit();
-       this.handleOpen();
+        this.handleOpen();
     };
 
     handleCancel = () => this.setState({result: 'cancelled', open: false})
