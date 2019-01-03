@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Button, Confirm, Dimmer, Form, Header, Icon, Segment, Select, TextArea} from 'semantic-ui-react';
 import DatePicker from 'react-datepicker';
-import DateTimeButton from './Partials/DateTimeButton';
+import DateTimeButton from './Partials/_DateTimeButton';
 import 'react-datepicker/dist/react-datepicker.min.css';
 import api from "../../Shared/ApiConnect";
 

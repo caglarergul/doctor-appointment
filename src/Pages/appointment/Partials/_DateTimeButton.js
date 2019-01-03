@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Button, Icon} from 'semantic-ui-react';
-class DateTimeButton extends Component {
+class _DateTimeButton extends Component {
     render() {
         return (
             <Button icon labelPosition='left'
@@ -13,8 +13,8 @@ class DateTimeButton extends Component {
         );
     }
 }
-DateTimeButton.propTypes = {
+_DateTimeButton.propTypes = {
     onClick: PropTypes.func,
     value: PropTypes.string
 };
-export default DateTimeButton;
+export default _DateTimeButton;

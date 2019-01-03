@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import {Table, Segment} from 'semantic-ui-react'
 import api from '../../Shared/ApiConnect';
-import AppointmentDetails from "./Partials/AppointmentDetails";
+import AppointmentDetails from "./Partials/_AppointmentDetails";
 class ListAppointment extends Component {
 
     state = {
       appointmentList : []
     };
+
 
     getAllAppointments = () => {
         api.get('appointments').then(response => {
@@ -31,9 +32,9 @@ class ListAppointment extends Component {
 
         let appointments = this.state.appointmentList.map(appointment => {
            return <AppointmentDetails key={appointment._id} id={appointment._id}
-                                      relatedCustomerId={appointment.relatedCustomerId}
-                                      relatedCustomerFullName={appointment.relatedCustomerFullName}
-                                      notes={appointment.notes} date={appointment.date}/>
+                                       relatedCustomerId={appointment.relatedCustomerId}
+                                       relatedCustomerFullName={appointment.relatedCustomerFullName}
+                                       notes={appointment.notes} date={appointment.date}/>
         });
 
         return (
@@ -47,7 +48,7 @@ class ListAppointment extends Component {
                                 <Table.HeaderCell>Customer Name</Table.HeaderCell>
                                 <Table.HeaderCell>Appointment Date</Table.HeaderCell>
                                 <Table.HeaderCell>Notes</Table.HeaderCell>
-                                <Table.HeaderCell collapsing>Details</Table.HeaderCell>
+                                <Table.HeaderCell>Details</Table.HeaderCell>
                             </Table.Row>
                         </Table.Header>
 
