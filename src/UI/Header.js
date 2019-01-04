@@ -25,15 +25,7 @@ class Header extends Component {
                     Appointment
                 </NavLink>
 
-                <NavLink to="/appointments/delete" className={"item"}>
-                    Delete
-                    Appointment
-                </NavLink>
 
-                <NavLink to="/appointments/update" className={"item"}>
-                    Update
-                    Appointment
-                </NavLink>
 
                 <Menu.Menu position='right'>
                     <NavLink to="/customer/create" className={"item"}>

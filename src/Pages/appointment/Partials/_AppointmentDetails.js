@@ -8,23 +8,25 @@ moment.locale('tr');
 
 class _AppointmentDetails extends Component {
 
-    handleDeleteAppointment = (id) => {
 
-     //   console.log(id.target.attr("id"))
-        // let confirm = window.confirm('Are You Sure?');
-        //
-        // if (confirm === true) {
-        //     api.delete('appointment' + id).then(response => {
-        //         alert("Successfully Deleted!");
-        //         console.log(response.data);
-        //     });
-        // } else {
-        //
-        // }
+
+    handleDeleteAppointment = (id) => {
+        let confirm = window.confirm('Are You Sure?');
+
+        if (confirm === true) {
+            api.delete('appointment/' + id).then(response => {
+                alert("Successfully Deleted!");
+                console.log(response.data);
+                window.location.reload();
+            });
+        } else {
+
+        }
     };
 
     render() {
         return (
+
             <Table.Row>
 
                 <Table.Cell>{this.props.relatedCustomerFullName}</Table.Cell>
@@ -35,7 +37,7 @@ class _AppointmentDetails extends Component {
                 <Table.Cell collapsing>
                     <Button className={"ui icon  orange right tiny  button m-b-5"}><Icon
                         className={"right refresh icon"}/></Button>
-                    <Button className={"ui icon  red right tiny  button m-b-5"} data-id={this.props.id} onClick={(e)=>this.handleDeleteAppointment(e)}>
+                    <Button className={"ui icon  red right tiny  button m-b-5"} data-id={this.props.id} onClick={()=>this.handleDeleteAppointment(this.props.id)}>
                         <Icon className={"right trash icon"}/>
                     </Button>
                 </Table.Cell>
